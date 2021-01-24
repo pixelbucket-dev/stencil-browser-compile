@@ -25,7 +25,7 @@
   }
 </code></pre>
 
-<pre><code class="jsx">  @Component({ tag: 'cmp-b' })
+    <pre><code class="jsx">  @Component({ tag: 'cmp-b' })
   export class CmpB {
     @Prop() name
     render() {
@@ -38,9 +38,9 @@
     <cmp-b name="Bar"></cmp-b>
 
     <script id="rendered-js" type="module">
-      import { parseFromHTML } from './loadStencil.js';
+      import { parseFromHTML } from "./load-stencil.js";
 
-      parseFromHTML('code.jsx');
+      parseFromHTML("code.jsx");
     </script>
   </body>
 </html>

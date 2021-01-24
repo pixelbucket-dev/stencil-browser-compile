@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <style>
+    pre {
+      display: none;
+    }
+  </style>
+  <link rel="prefetch" href="worker.js" as="worker" />
+
+  <body>
+    <pre><code class="jsx">  @Component({ tag: 'cmp-a' })
+  export class CmpA {
+    @Prop() name
+    render() {
+      return &lt;h1&gt;Hello {this.name}&lt;/h1&gt;
+    }
+  }
+</code></pre>
+
+<pre><code class="jsx">  @Component({ tag: 'cmp-b' })
+  export class CmpB {
+    @Prop() name
+    render() {
+      return &lt;h1&gt;Hello {this.name}&lt;/h1&gt;
+    }
+  }
+</code></pre>
+
+    <cmp-a name="Foo"></cmp-a>
+    <cmp-b name="Bar"></cmp-b>
+
+    <script id="rendered-js" type="module">
+      import { parseFromHTML } from './loadStencil.js';
+
+      parseFromHTML('code.jsx');
+    </script>
+  </body>
+</html>
